@@ -24,3 +24,27 @@ if (menuButton && navigation) {
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+// Respect prefers-reduced-motion: pause the looping comparison clip and expose controls.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const loopingVideos = Array.from(document.querySelectorAll('video[autoplay]'));
+
+const applyMotionPreference = () => {
+  loopingVideos.forEach((video) => {
+    if (reduceMotion.matches) {
+      video.autoplay = false;
+      video.loop = false;
+      video.controls = true;
+      video.pause();
+    } else {
+      video.loop = true;
+      video.controls = false;
+      video.play().catch(() => { video.controls = true; });
+    }
+  });
+};
+
+if (loopingVideos.length) {
+  applyMotionPreference();
+  reduceMotion.addEventListener('change', applyMotionPreference);
+}
