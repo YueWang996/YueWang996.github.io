@@ -102,12 +102,12 @@
         <p>在这台机器上，我装了一个 1.26 kg、3 自由度的主动柔性脊柱 SPARC，让躯干在弯曲的同时还能沿轴向伸缩。97 次 bounding 实机实验里，受阻抗控制的柔性脊柱把最高速度推到 1.029 m/s，是刚性脊柱的 1.53 倍。现在我在 Isaac Lab 里用 AMP 把同一个问题放进学习框架重做一遍，想弄清楚脊柱究竟给学出来的步态带来了什么。</p>
       </div>
 
-      <div class="about-gallery">
-        <figure>
+      <div class="about-gallery media-row">
+        <figure style="--ar:.75">
           <img src="assets/early_dog.jpg" width="960" height="1280" alt="2023 年的早期原型：四足机器人趴在地毯上，机身绑着一块树莓派，周围散落着零件、螺丝和纸箱">
           <figcaption><span>2023 · 地毯上的第一版原型</span></figcaption>
         </figure>
-        <figure>
+        <figure style="--ar:1.3333">
           <img src="assets/robot_dog_field.jpg" width="1700" height="1275" alt="王越自主研发的 8 自由度四足机器人，装配 SPARC 主动柔性脊柱，站立在草地上">
           <figcaption><span>2025 · 8-DoF 整机 + SPARC 主动柔性脊柱 · 6.66 kg</span><span>Southampton</span></figcaption>
         </figure>
@@ -133,22 +133,24 @@
           <div class="project-kicker"><span>2023 至今</span><span>自主研发</span></div>
           <h3>四足机器狗与 SPARC<br>主动柔性脊柱</h3>
           <p class="project-summary">从零完成 8 自由度四足机器人的机械结构、传动、电控板和实物搭建，并研制 1.26 kg、3 自由度的 SPARC 脊柱模块。系统在 FreeRTOS 上以 1 kHz 运行刚体动力学、任务空间阻抗控制和摩擦补偿。</p>
-          <div class="project-media media-quad">
-            <figure>
-              <img src="assets/spined_dog.png" width="1176" height="1139" loading="lazy" alt="自研四足机器人与 SPARC 主动柔性脊柱整机">
+          <div class="project-media media-row">
+            <figure style="--ar:1.0327">
+              <img src="assets/spined_dog.png" width="1200" height="1162" loading="lazy" alt="自研四足机器人与 SPARC 主动柔性脊柱整机">
               <figcaption>8-DoF quadruped · SPARC active spine</figcaption>
             </figure>
-            <figure>
+            <figure style="--ar:.9425">
+              <img src="assets/sparc_control.png" width="1000" height="1061" loading="lazy" alt="SPARC 系统集成框图：浮动基阻抗控制器输出脊柱力矩，Raibert 启发式轨迹生成器输出腿部力矩">
+              <figcaption>Impedance controller · system integration</figcaption>
+            </figure>
+          </div>
+          <div class="project-media media-row">
+            <figure style="--ar:.5625">
               <img src="assets/pcb.jpg" width="1080" height="1920" loading="lazy" alt="自主设计的四块控制电路板摆在桌上，旁边是一台准直驱执行器">
               <figcaption>Custom control &amp; power boards</figcaption>
             </figure>
-            <figure>
-              <img src="assets/spine_real.jpg" width="5144" height="2685" loading="lazy" alt="SPARC 三自由度主动柔性脊柱实物与推拉测试台架">
+            <figure style="--ar:1.9169">
+              <img src="assets/spine_real.jpg" width="1800" height="939" loading="lazy" alt="SPARC 三自由度主动柔性脊柱实物与推拉测试台架">
               <figcaption>3-DoF compliant spine hardware</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/sparc_control.png" width="1000" height="1061" loading="lazy" alt="SPARC 系统集成框图：浮动基阻抗控制器输出脊柱力矩，Raibert 启发式轨迹生成器输出腿部力矩">
-              <figcaption>Impedance controller · system integration</figcaption>
             </figure>
           </div>
           <ul class="project-points">
@@ -159,7 +161,7 @@
           <div class="text-links">
             <a href="https://github.com/YueWang996/sparc" target="_blank" rel="noreferrer">项目仓库 <span aria-hidden="true">↗</span></a>
             <a href="https://github.com/YueWang996/robot-dynamics-c" target="_blank" rel="noreferrer">C/C++ 动力学库 <span aria-hidden="true">↗</span></a>
-            <span>论文即将上线 arXiv</span>
+            <a href="https://arxiv.org/abs/2510.01984" target="_blank" rel="noreferrer">arXiv 论文 <span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <aside class="project-stack" aria-label="项目技术栈">
@@ -176,23 +178,19 @@
           <h3>主动脊柱到底给<br>学出来的步态带来什么</h3>
           <p class="project-summary">把猎豹奔跑的动捕片段重定向到 11 自由度的带脊柱四足模型上，作为对抗式动作先验（AMP）的风格参考，然后用完全相同的奖励、网络与训练日程训练三种脊柱范式：刚性锁死、端到端直接驱动、以及任务空间阻抗。三者唯一的差别只有脊柱的控制接口。</p>
           <figure class="wide-figure">
-            <img src="assets/amp_overview.jpg" width="1700" height="528" loading="lazy" alt="强化学习训练架构：左侧把猎豹动捕轨迹重定向到 11 自由度带脊柱机器人，右侧为 AMP 训练管线，同一策略下切换刚性脊柱、主动脊柱与阻抗控制脊柱三种范式">
-            <figcaption>Mocap retargeting · AMP training pipeline · three spine paradigms</figcaption>
+            <img src="assets/rl_training.jpg" width="2000" height="1048" loading="lazy" alt="Isaac Lab / Omniverse 工作界面截图：视口中数十个四足机器人在同一场景里并行训练奔驰步态，右侧为 Isaac Lab 属性面板">
+            <figcaption>Isaac Lab · massively parallel training envs</figcaption>
           </figure>
-          <figure class="wide-figure">
-            <img src="assets/rl_training.jpg" width="1700" height="893" loading="lazy" alt="Isaac Lab 仿真截图：数十个四足机器人在同一场景中并行训练奔驰步态">
-            <figcaption>Massively parallel training envs · Isaac Lab</figcaption>
-          </figure>
-          <div class="scene-strip">
-            <figure>
+          <div class="scene-strip media-row">
+            <figure style="--ar:1.7822">
               <img src="assets/rl_scene_gallop.jpg" width="900" height="505" loading="lazy" alt="仿真场景：机器人以奔驰步态前进">
               <figcaption>Galloping</figcaption>
             </figure>
-            <figure>
+            <figure style="--ar:1.8036">
               <img src="assets/rl_scene_gap.jpg" width="900" height="499" loading="lazy" alt="仿真场景：机器人跨越地面上的沟壑">
               <figcaption>Gap traversing</figcaption>
             </figure>
-            <figure>
+            <figure style="--ar:1.8036">
               <img src="assets/rl_scene_push.jpg" width="900" height="499" loading="lazy" alt="仿真场景：机器人承受侧向推力扰动">
               <figcaption>Perturbation</figcaption>
             </figure>
@@ -289,14 +287,13 @@
     <section id="research" class="section-shell content-section research-section" aria-labelledby="research-title">
       <header class="section-heading">
         <p class="section-index">03 / RESEARCH</p>
-        <h2 id="research-title">研究与论文</h2>
-        <p>明确区分已发表、已录用、预印本与进行中的工作。</p>
+        <h2 id="research-title">发表工作</h2>
       </header>
 
       <div class="publication-list">
         <article class="publication">
-          <div><span class="pub-year">2026</span><span class="pub-status status-progress">即将上线 arXiv</span></div>
-          <h3>SPARC: Spine with Prismatic And Revolute Compliance for Faster Quadrupedal Bounding</h3>
+          <div><span class="pub-year">2026</span><span class="pub-status status-paper">arXiv 预印本</span></div>
+          <h3><a href="https://arxiv.org/abs/2510.01984" target="_blank" rel="noreferrer">SPARC: Spine with Prismatic And Revolute Compliance for Faster Quadrupedal Bounding</a></h3>
           <p>第一作者。围绕主动柔性脊柱的机构、任务空间控制与四足机器人 bounding 步态实机验证。</p>
         </article>
 
@@ -310,6 +307,12 @@
           <div><span class="pub-year">2026</span><span class="pub-status status-accepted">PRICAI 2026 · 已录用</span></div>
           <h3>GAFT: Geo-Anchored Fine-Tuning for Hazard Identification from Rare Failures</h3>
           <p>共同作者。利用几何信息引导视觉基础模型适配，从少量失效样本中学习野外机器人的稀有危险。</p>
+        </article>
+
+        <article class="publication">
+          <div><span class="pub-year">2026</span><span class="pub-status status-paper">arXiv 预印本</span></div>
+          <h3><a href="https://arxiv.org/abs/2609.00093" target="_blank" rel="noreferrer">Local Reference Geometry Residual Augmentation for Imbalanced Time Series Classification</a></h3>
+          <p>共同作者。针对类别不平衡的时间序列分类，用局部参考几何构造残差特征增强，在 UCR / Bake Off Redux 基准上验证。</p>
         </article>
 
         <article class="publication">
