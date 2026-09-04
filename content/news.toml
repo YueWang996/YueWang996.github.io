@@ -1,0 +1,19 @@
+[[news]]
+date = "2026-08"
+content = "Two preprints posted: [GAFT](https://arxiv.org/abs/2608.30858) on hazard identification from rare failures, and [LRG](https://arxiv.org/abs/2609.00093) on imbalanced time series classification."
+
+[[news]]
+date = "2026-08"
+content = "GAFT accepted at PRICAI 2026."
+
+[[news]]
+date = "2026-05"
+content = "[BARD](https://arxiv.org/abs/2605.31481) accepted at ICANN 2026, a batched differentiable rigid body dynamics library in PyTorch."
+
+[[news]]
+date = "2025-10"
+content = "[SPARC](https://arxiv.org/abs/2510.01984) is on arXiv: an active compliant spine for faster quadrupedal bounding, validated over 97 hardware runs."
+
+[[news]]
+date = "2025"
+content = "[Quattro](https://arxiv.org/abs/2504.01806) accepted at IEEE CDC 2025 and [HMCF](https://arxiv.org/abs/2505.00820) at PRIMA 2025."

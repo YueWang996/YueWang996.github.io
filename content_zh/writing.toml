@@ -1,0 +1,19 @@
+type = "card"
+title = "文章"
+description = "在知乎写的一些技术记录，基本都是自己踩过坑之后整理下来的。"
+
+[[items]]
+title = "树莓派：给内核打上实时补丁（RT-patch）"
+subtitle = "知乎专栏"
+date = "2024"
+content = "把树莓派换成 PREEMPT_RT 实时内核的完整过程。控制回路跑不稳的时候，抖动常常来自调度延迟。"
+tags = ["PREEMPT_RT", "Linux", "实时系统"]
+link = "https://zhuanlan.zhihu.com/p/695825486"
+
+[[items]]
+title = "使用深度强化学习算法控制机器人，选择哪种仿真环境最适合？"
+subtitle = "知乎回答 · 高赞高收藏"
+date = "2024"
+content = "ROS、V-REP、MuJoCo 这些仿真环境在机器人强化学习里各自的取舍。"
+tags = ["仿真", "MuJoCo", "强化学习"]
+link = "https://www.zhihu.com/question/307879623/answer/3417676245"

@@ -1,0 +1,19 @@
+[[news]]
+date = "2026-08"
+content = "两篇预印本上线：[GAFT](https://arxiv.org/abs/2608.30858)，从稀有失效样本中识别危险；[LRG](https://arxiv.org/abs/2609.00093)，类别不平衡的时间序列分类。"
+
+[[news]]
+date = "2026-08"
+content = "GAFT 被 PRICAI 2026 录用。"
+
+[[news]]
+date = "2026-05"
+content = "[BARD](https://arxiv.org/abs/2605.31481) 被 ICANN 2026 录用，PyTorch 的批量可微分刚体动力学库。"
+
+[[news]]
+date = "2025-10"
+content = "[SPARC](https://arxiv.org/abs/2510.01984) 上线 arXiv：主动柔性脊柱让四足 bounding 更快，97 次实机实验验证。"
+
+[[news]]
+date = "2025"
+content = "[Quattro](https://arxiv.org/abs/2504.01806) 被 IEEE CDC 2025 录用，[HMCF](https://arxiv.org/abs/2505.00820) 被 PRIMA 2025 录用。"

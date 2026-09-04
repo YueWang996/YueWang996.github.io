@@ -1,0 +1,70 @@
+[site]
+title = "王越"
+description = "南安普顿大学电子与电气工程博士生，做足式机器人的运动控制、机器人学习与实时控制。"
+favicon = "/favicon.svg"
+last_updated = "2026 年 9 月 4 日"
+
+[author]
+name = "王越"
+title = "电子与电气工程博士研究生"
+institution = "南安普顿大学"
+avatar = "/bio.jpg"
+
+[social]
+email = "justin.yuewang@gmail.com"
+location = "英国 南安普顿"
+google_scholar = "https://scholar.google.com/citations?user=UqwtkscAAAAJ"
+github = "https://github.com/YueWang996"
+
+[features]
+enable_likes = false
+enable_one_page_mode = false
+
+[i18n]
+enabled = true
+locales = ["zh", "en"]
+default_locale = "en"
+mode = "auto"
+fixed_locale = "en"
+persist = true
+switcher = true
+
+[i18n.labels]
+zh = "中文"
+en = "English"
+
+[[navigation]]
+title = "关于"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "项目"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "发表工作"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "影像"
+type = "page"
+target = "footage"
+href = "/footage"
+
+[[navigation]]
+title = "文章"
+type = "page"
+target = "writing"
+href = "/writing"
+
+[[navigation]]
+title = "简历"
+type = "page"
+target = "cv"
+href = "/cv"

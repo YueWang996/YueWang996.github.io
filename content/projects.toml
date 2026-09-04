@@ -1,0 +1,45 @@
+type = "card"
+title = "Projects"
+description = "A quadruped I built from nothing, and the tools I wrote for training and control."
+
+[[items]]
+title = "Quadruped robot and the SPARC active spine"
+subtitle = "Self-built hardware, 8 DoF, 6.66 kg"
+date = "2023 — present"
+content = "Mechanical structure, transmission, control boards and final assembly all done from scratch, plus SPARC, a 1.26 kg three-DoF compliant spine module. Rigid body dynamics, task-space impedance control and friction compensation run at 1 kHz under FreeRTOS on an STM32G473 I laid out myself. Bench tests cover 300 to 700 N/m commanded stiffness with tracking error under 1.5%; on hardware, 97 bounding runs reached 1.029 m/s."
+tags = ["Inventor", "STM32G473", "FreeRTOS", "CAN", "Impedance Control", "RNEA / CRBA"]
+link = "https://github.com/YueWang996/sparc"
+image = "/spined_dog.png"
+
+[[items]]
+title = "What an articulated spine does for a learned gait"
+subtitle = "Isaac Lab, Adversarial Motion Priors"
+date = "2025 — present"
+content = "A galloping-cheetah mocap clip is retargeted onto an 11-DoF spined quadruped and used as the style reference for AMP. Three spine paradigms train under identical rewards, networks and schedules, differing only in the spine control interface: locked rigid, end-to-end actuated, and task-space impedance. The spine does not lower steady-state cost of transport; the end-to-end spine recovers cheetah-like stride length, about 35% longer than rigid at 3 m/s, while the impedance spine gives the best push recovery."
+tags = ["Isaac Lab", "AMP", "PPO / skrl", "Newton / MJWarp"]
+image = "/rl_training.jpg"
+
+[[items]]
+title = "BARD"
+subtitle = "Batched differentiable rigid body dynamics on GPU"
+date = "2026"
+content = "A floating-base robot dynamics library in plain PyTorch: URDF parsing, FK, Jacobians, RNEA, CRBA, ABA and automatic differentiation, ready to drop into reinforcement learning or trajectory optimisation. On an H200 at batch 4096, FK and Jacobian throughput reach 64x and 63x Pinocchio."
+tags = ["PyTorch", "Autodiff", "GPU", "ICANN 2026"]
+link = "https://github.com/YueWang996/bard-pytorch-dynamics"
+
+[[items]]
+title = "Quattro"
+subtitle = "Transformer-accelerated iLQR and MPC"
+date = "2025"
+content = "A Transformer predicts the feedback and feedforward matrices of iLQR in parallel, then the whole thing is deployed as a hardware-software co-design on FPGA. Up to 27x faster per optimisation iteration on a quadrotor, 17.8x on the full MPC loop, and 27.3x on FPGA."
+tags = ["Transformer", "iLQR / MPC", "FPGA", "IEEE CDC 2025"]
+link = "https://github.com/YueWang996/quattro-transformer-ilqr"
+
+[[items]]
+title = "FOCX"
+subtitle = "Motor drives and a two-wheeled legged robot"
+date = "2021 — 2022"
+content = "A low-cost ESP32 BLDC field-oriented control board with position, velocity and torque loops. I used my own drives to build a two-wheeled legged robot that balances with LQR."
+tags = ["FOC / BLDC", "ESP32", "LQR", "Altium"]
+link = "https://github.com/YueWang996/FOCX"
+image = "/pcb.jpg"

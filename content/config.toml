@@ -1,0 +1,70 @@
+[site]
+title = "Yue Wang"
+description = "PhD student at the University of Southampton working on legged locomotion, robot learning and real-time control."
+favicon = "/favicon.svg"
+last_updated = "September 4, 2026"
+
+[author]
+name = "Yue Wang"
+title = "PhD Student in Electronic and Electrical Engineering"
+institution = "University of Southampton"
+avatar = "/bio.jpg"
+
+[social]
+email = "justin.yuewang@gmail.com"
+location = "Southampton, United Kingdom"
+google_scholar = "https://scholar.google.com/citations?user=UqwtkscAAAAJ"
+github = "https://github.com/YueWang996"
+
+[features]
+enable_likes = false
+enable_one_page_mode = false
+
+[i18n]
+enabled = true
+locales = ["zh", "en"]
+default_locale = "en"
+mode = "auto"
+fixed_locale = "en"
+persist = true
+switcher = true
+
+[i18n.labels]
+zh = "中文"
+en = "English"
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "Footage"
+type = "page"
+target = "footage"
+href = "/footage"
+
+[[navigation]]
+title = "Writing"
+type = "page"
+target = "writing"
+href = "/writing"
+
+[[navigation]]
+title = "CV"
+type = "page"
+target = "cv"
+href = "/cv"

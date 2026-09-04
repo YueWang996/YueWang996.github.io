@@ -1,0 +1,19 @@
+type = "card"
+title = "Writing"
+description = "Technical notes I have written on Zhihu, mostly written up after walking into the problem myself."
+
+[[items]]
+title = "Raspberry Pi: patching the kernel for real time (RT-patch)"
+subtitle = "Zhihu column"
+date = "2024"
+content = "The whole process of moving a Raspberry Pi onto a PREEMPT_RT kernel. When a control loop will not settle, the jitter often comes from scheduling latency."
+tags = ["PREEMPT_RT", "Linux", "Real-Time"]
+link = "https://zhuanlan.zhihu.com/p/695825486"
+
+[[items]]
+title = "Which simulator suits deep reinforcement learning for robot control?"
+subtitle = "Zhihu answer"
+date = "2024"
+content = "What ROS, V-REP and MuJoCo each trade away when you use them for robot reinforcement learning."
+tags = ["Simulation", "MuJoCo", "Reinforcement Learning"]
+link = "https://www.zhihu.com/question/307879623/answer/3417676245"
