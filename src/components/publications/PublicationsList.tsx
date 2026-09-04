@@ -23,6 +23,19 @@ interface PublicationsListProps {
     embedded?: boolean;
 }
 
+// Where a publication actually lives: the explicit url, else its DOI.
+function paperLink(pub: Publication): string | undefined {
+    if (pub.url) return pub.url;
+    if (pub.doi) return `https://doi.org/${pub.doi}`;
+    return undefined;
+}
+
+function paperLinkLabel(pub: Publication): string {
+    const link = paperLink(pub) || '';
+    if (link.includes('arxiv.org')) return 'arXiv';
+    return 'Paper';
+}
+
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
     const [searchQuery, setSearchQuery] = useState('');
@@ -215,7 +228,18 @@ export default function PublicationsList({ config, publications, embedded = fals
                                 )}
                                 <div className="flex-grow">
                                     <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary mb-2 leading-tight`}>
-                                        <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
+                                        {paperLink(pub) ? (
+                                            <a
+                                                href={paperLink(pub)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="transition-colors hover:text-accent"
+                                            >
+                                                <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
+                                            </a>
+                                        ) : (
+                                            <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
+                                        )}
                                     </h3>
                                     <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 mb-2`}>
                                         {pub.authors.map((author, idx) => (
@@ -241,6 +265,16 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     )}
 
                                     <div className="flex flex-wrap gap-2 mt-auto">
+                                        {paperLink(pub) && (
+                                            <a
+                                                href={paperLink(pub)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                            >
+                                                {paperLinkLabel(pub)}
+                                            </a>
+                                        )}
                                         {pub.doi && (
                                             <a
                                                 href={`https://doi.org/${pub.doi}`}
